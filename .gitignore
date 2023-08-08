@@ -1,0 +1,52 @@
+starter-code/
+
+# Logs
+notifications-page-main/logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# inside notifications-page-main
+# Logs
+notifications-page-main/notifications-page-main/logs
+notifications-page-main/*.log
+notifications-page-main/npm-debug.log*
+notifications-page-main/yarn-debug.log*
+notifications-page-main/yarn-error.log*
+notifications-page-main/pnpm-debug.log*
+notifications-page-main/lerna-debug.log*
+
+notifications-page-main/node_modules
+notifications-page-main/dist
+notifications-page-main/dist-ssr
+notifications-page-main/*.local
+
+# Editor directories and files
+notifications-page-main/.vscode/*
+notifications-page-main/!.vscode/extensions.json
+notifications-page-main/.idea
+notifications-page-main/.DS_Store
+notifications-page-main/*.suo
+notifications-page-main/*.ntvs*
+notifications-page-main/*.njsproj
+notifications-page-main/*.sln
+notifications-page-main/*.sw?
