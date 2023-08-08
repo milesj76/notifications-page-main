@@ -2,17 +2,22 @@
   let unreadNotifications = 3
 </script>
 
-<main class="max-w-screen bg-red">
-  <header class="w-screen flex justify-between">
-    <div class="flex space-x-4">
-      <h1>Notifications</h1>
-      <span class="badge badge-secondary badge-lg">{unreadNotifications}</span>
+<main class="bg-white mx-4 my-4 max-w-screen">
+  <header class="flex justify-between items-center">
+    <div class="flex space-x-2">
+      <h1 class="font-extrabold text-xl">Notifications</h1>
+      <span class="badge badge-secondary badge-lg rounded-md text-base py-3 bg-blue-base text-white">{unreadNotifications}</span>
     </div>
 
     <div>
-      <button class="btn btn-ghost normal-case">Mark all as read</button>
+      <button class="btn border-none normal-case font-normal hover:text-blue-base p-0">Mark all as read</button>
     </div>
   </header>
+
+  <!-- Notifications -->
+  <section>
+    
+  </section>
 </main>
 
 <style>

@@ -10,12 +10,8 @@ export default {
       'mobile': '375px',
       'desktop': '1440px',
     },
-    fontSize: {
-      base: '16px'
-    },
     colors: {
       red: 'hsl(1, 90%, 64%)',
-      blue: 'hsl(219, 85%, 26%)',
       white: 'hsl(0, 0%, 100%)',
       blue: {
         100: 'hsl(210, 60%, 98%)',
@@ -24,6 +20,7 @@ export default {
         300: 'hsl(219, 14%, 63%)',
         400: 'hsl(219, 12%, 42%)',
         500: 'hsl(224, 21%, 14%)',
+        base: 'hsl(219, 85%, 26%)',
       }
     },
   },
