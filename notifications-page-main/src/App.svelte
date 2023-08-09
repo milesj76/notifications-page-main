@@ -1,4 +1,6 @@
 <script lang="ts">
+  // import db from './lib/db'
+
   let unreadNotifications = 3
 </script>
 
@@ -16,7 +18,9 @@
 
   <!-- Notifications -->
   <section>
-    
+    <!-- {#each db.notification as notification}
+      <p>{notification.userName}</p>
+    {/each} -->
   </section>
 </main>
 
