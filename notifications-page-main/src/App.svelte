@@ -1,5 +1,6 @@
 <script lang="ts">
-  // import db from './lib/db'
+  import Notification from "./lib/Notification.svelte";
+  import { notifications } from "./lib/db";
 
   let unreadNotifications = 3
 </script>
@@ -17,10 +18,10 @@
   </header>
 
   <!-- Notifications -->
-  <section>
-    <!-- {#each db.notification as notification}
-      <p>{notification.userName}</p>
-    {/each} -->
+  <section class="space-y-3"> 
+    {#each $notifications as notification}
+      <Notification {notification} />
+    {/each}
   </section>
 </main>
 

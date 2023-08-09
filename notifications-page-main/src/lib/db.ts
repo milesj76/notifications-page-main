@@ -9,7 +9,7 @@ import avatarNathanPeterson from '../assets/img/avatar-nathan-peterson.webp'
 import avatarRizkyHasanuddin from '../assets/img/avatar-rizky-hasanuddin.webp'
 import chessImg from '../assets/img/image-chess.webp'
 
-export const db = {
+const db = {
   notifications: [
     {
       userName: 'Anna Kim',
@@ -75,3 +75,5 @@ export const db = {
     },
   ],
 }
+
+export const notifications = writable(db.notifications)
