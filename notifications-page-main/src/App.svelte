@@ -11,7 +11,7 @@
 </script>
 
 <main class="bg-white mx-4 my-4 max-w-screen">
-  <header class="flex justify-between items-center">
+  <header class="flex justify-between items-center my-4">
     <div class="flex space-x-2">
       <h1 class="font-extrabold text-xl">Notifications</h1>
       <span class="badge badge-secondary badge-lg rounded-md text-base py-3 bg-blue-base text-white">{unreadNotifications()}</span>
