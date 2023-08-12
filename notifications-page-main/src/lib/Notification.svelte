@@ -48,17 +48,17 @@
 
 </script>
 
-<article class="grid grid-cols-6 grid-rows-1 p-2 bg-blue-100 rounded-md text-sm">
+<article class={"grid grid-cols-6 grid-rows-1 p-2 rounded-md text-sm text-blue-400 " + (read ? '' : 'bg-blue-100')}>
   <!-- Avatar -->
-  <img src={userAvatar} alt="avatar" class="w-10 rounded-full">
+  <img src={userAvatar} alt="avatar" class="w-10 rounded-full col-span-1">
 
   <!-- Details -->
   <!-- <div class="col-span-5"> -->
   <div class={"col-span-5 " + (notification?.postImg ? "col-span-4" : '')}>
-    <p><span>{userName}</span> {message} {subject ? subject : ''}<span class="" /></p>
+    <p><span class="font-extrabold text-blue-500">{userName}</span> {message} <span class={"font-extrabold " + (eventType === 'group' ? 'text-blue-base' : '')}>{subject ? subject : ''}</span><span class="text-red text-xl leading-3 px-1">{read ? '' : '•'}</span></p>
 
     <!-- Date -->
-    <div><p>{datetime}</p></div>
+    <div><p class="text-blue-300">{datetime}</p></div>
 
     <!-- Private Message -->
     {#if eventDetails?.privateMessage}
@@ -71,7 +71,7 @@
   <!-- Img -->
   {#if eventDetails?.postImg}
     <!-- svelte-ignore a11y-img-redundant-alt -->
-    <img src={eventDetails?.postImg} alt="Related image" class="w-9 ml-4" />
+    <img src={eventDetails?.postImg} alt="Related image" class="w-9" />
   {/if}
 
 </article>
