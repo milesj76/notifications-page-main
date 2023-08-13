@@ -4,8 +4,6 @@
   $: eventDetails = determineEvent(notification);
   let message: string;
   let subject: string;
-  let privateMessage: string;
-  let postImg;
   
   function determineEvent(notification) {
     let { eventType, event } = notification
@@ -48,12 +46,12 @@
 
 </script>
 
-<article class={"grid grid-cols-6 grid-rows-1 grid-flow-col-dense p-2 rounded-md text-sm text-blue-400 " + (read ? '' : 'bg-blue-100')}>
+<!-- <article class={"grid grid-cols-6 grid-rows-1 grid-flow-col-dense p-2 rounded-md text-sm text-blue-400 " + (read ? '' : 'bg-blue-100')}> -->
+<article class={"grid grid-cols-[60px_repeat(5,_minmax(0,_1fr))] grid-flow-col-dense py-4 px-6 rounded-md text-sm text-blue-400 " + (read ? '' : 'bg-blue-100')}>
   <!-- Avatar -->
   <img src={userAvatar} alt="avatar" class="w-10 rounded-full col-span-1">
 
   <!-- Details -->
-  <!-- <div class="col-span-5"> -->
   <div class={"col-span-5 " + (notification?.postImg ? "col-span-4" : '')}>
     <p><span class="font-extrabold text-blue-500">{userName}</span> {message} <span class={"font-extrabold " + (eventType === 'group' ? 'text-blue-base' : '')}>{subject ? subject : ''}</span><span class="text-red text-xl leading-3 px-1">{read ? '' : '•'}</span></p>
 

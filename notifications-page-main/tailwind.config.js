@@ -9,6 +9,7 @@ export default {
     screens: {
       'mobile': '375px',
       'desktop': '1440px',
+      'wide': '42rem'
     },
     colors: {
       red: 'hsl(1, 90%, 64%)',
