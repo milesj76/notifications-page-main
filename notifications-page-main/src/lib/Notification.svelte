@@ -48,7 +48,7 @@
 
 </script>
 
-<article class={"grid grid-cols-6 grid-rows-1 p-2 rounded-md text-sm text-blue-400 " + (read ? '' : 'bg-blue-100')}>
+<article class={"grid grid-cols-6 grid-rows-1 grid-flow-col-dense p-2 rounded-md text-sm text-blue-400 " + (read ? '' : 'bg-blue-100')}>
   <!-- Avatar -->
   <img src={userAvatar} alt="avatar" class="w-10 rounded-full col-span-1">
 
@@ -62,7 +62,7 @@
 
     <!-- Private Message -->
     {#if eventDetails?.privateMessage}
-      <div>
+      <div class="border rounded-sm border-blue-250 p-4 my-4 leading-[18px] tracking-tight">
         {eventDetails?.privateMessage}
       </div>
     {/if}
@@ -71,7 +71,7 @@
   <!-- Img -->
   {#if eventDetails?.postImg}
     <!-- svelte-ignore a11y-img-redundant-alt -->
-    <img src={eventDetails?.postImg} alt="Related image" class="w-9" />
+    <img src={eventDetails?.postImg} alt="Related image" class="w-9 ml-1" />
   {/if}
 
 </article>
