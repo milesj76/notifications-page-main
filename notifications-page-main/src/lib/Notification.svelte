@@ -53,14 +53,14 @@
 
   <!-- Details -->
   <div class={"col-span-5 " + (notification?.postImg ? "col-span-4" : '')}>
-    <p><span class="font-extrabold text-blue-500">{userName}</span> {message} <span class={"font-extrabold " + (eventType === 'group' ? 'text-blue-base' : '')}>{subject ? subject : ''}</span><span class="text-red text-xl leading-3 px-1">{read ? '' : '•'}</span></p>
+    <p><span class="font-extrabold text-blue-500 hover:text-blue-base cursor-pointer">{userName}</span> {message} <span class="font-extrabold text-blue-400 hover:text-blue-base cursor-pointer">{subject ? subject : ''}</span><span class="text-red text-xl leading-3 px-1">{read ? '' : '•'}</span></p>
 
     <!-- Date -->
     <div><p class="text-blue-300">{datetime}</p></div>
 
     <!-- Private Message -->
     {#if eventDetails?.privateMessage}
-      <div class="border rounded-sm border-blue-250 p-4 my-4 leading-[18px] tracking-tight">
+      <div class="border rounded-md border-blue-250 p-4 my-4 leading-[18px] tracking-tight cursor-pointer hover:bg-blue-250">
         {eventDetails?.privateMessage}
       </div>
     {/if}
@@ -69,7 +69,7 @@
   <!-- Img -->
   {#if eventDetails?.postImg}
     <!-- svelte-ignore a11y-img-redundant-alt -->
-    <img src={eventDetails?.postImg} alt="Related image" class="w-9 ml-1" />
+    <img src={eventDetails?.postImg} alt="Related image" class="w-9 ml-1 cursor-pointer" />
   {/if}
 
 </article>
