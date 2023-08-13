@@ -2,11 +2,23 @@
   import Notification from "./lib/Notification.svelte";
   import { notifications } from "./lib/db";
 
-  let orderedNotifications = $notifications.reverse()
-  let unreadNotifications = () => {
+  $: unreadNotifications = () => {
     let unread = 0;
     $notifications.forEach(item => item.read ? null : unread++)
     return unread
+  }
+
+  function handleMarkAllAsRead() {
+    // console.log('click')
+    notifications.update(list => {
+      let newArray = list.map(notification => {
+        notification.read = true
+        return notification
+      })
+
+      // console.log($notifications)
+      return newArray
+    })
   }
 </script>
 
@@ -19,13 +31,13 @@
       </div>
   
       <div>
-        <button class="btn border-none normal-case font-normal hover:text-blue-base p-0">Mark all as read</button>
+        <button class="btn border-none normal-case font-normal hover:text-blue-base p-0" on:click={handleMarkAllAsRead}>Mark all as read</button>
       </div>
     </header>
   
     <!-- Notifications -->
     <section class="space-y-3 mx-auto my-2">
-      {#each orderedNotifications as notification}
+      {#each $notifications as notification}
         <Notification {notification} />
       {/each}
     </section>

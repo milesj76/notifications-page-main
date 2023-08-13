@@ -1,9 +1,12 @@
 <script lang="ts">
   export let notification;
-  let { userName, userAvatar, datetime, read, eventType, event } = notification
+  let { userName, userAvatar, datetime, eventType, event } = notification
+  $: read = notification.read
   $: eventDetails = determineEvent(notification);
   let message: string;
   let subject: string;
+  let privateMessage: string;
+  let postImg;
   
   function determineEvent(notification) {
     let { eventType, event } = notification
@@ -25,8 +28,8 @@
 
       if (event === 'comment') {
         message = "commented on your picture"
-        return { postImg: notification?.postImg}
-        // postImg = notification?.postImg
+        // return { postImg: notification?.postImg}
+        postImg = notification?.postImg
       }
     }
 
@@ -34,7 +37,8 @@
     if (eventType === 'message') {
       if (event === 'privateMessage') {
         message = "sent you a private message"
-        return { privateMessage: notification?.message }
+        // return { privateMessage: notification?.message }
+        privateMessage = notification?.message
       }
     }
 
@@ -59,17 +63,17 @@
     <div><p class="text-blue-300">{datetime}</p></div>
 
     <!-- Private Message -->
-    {#if eventDetails?.privateMessage}
+    {#if privateMessage}
       <div class="border rounded-md border-blue-250 p-4 my-4 leading-[18px] tracking-tight cursor-pointer hover:bg-blue-250">
-        {eventDetails?.privateMessage}
+        {privateMessage}
       </div>
     {/if}
   </div>
 
   <!-- Img -->
-  {#if eventDetails?.postImg}
+  {#if postImg}
     <!-- svelte-ignore a11y-img-redundant-alt -->
-    <img src={eventDetails?.postImg} alt="Related image" class="w-9 ml-1 cursor-pointer" />
+    <img src={postImg} alt="Related image" class="w-9 ml-1 cursor-pointer" />
   {/if}
 
 </article>

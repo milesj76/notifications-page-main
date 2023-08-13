@@ -76,4 +76,4 @@ const db = {
   ],
 }
 
-export const notifications = writable(db.notifications)
+export const notifications = writable(db.notifications.reverse())
